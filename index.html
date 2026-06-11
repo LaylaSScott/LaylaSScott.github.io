@@ -209,6 +209,23 @@
                         <a class="small" href="#!">Contact</a>
                     </div>
                 </div>
+
+				<!-- Dog API Section -->
+			<section class="py-5">
+   			<div class="container px-5">
+        		<div class="text-center">
+            		<h2 class="display-6 fw-bolder">
+                		<span class="text-gradient d-inline">Random Dog Image</span>
+           			</h2>
+            		<p class="text-muted">Click the button to see a random dog image using the Dog API.</p>
+            		<button class="btn btn-primary mb-4" onclick="fetchDogImage()">Fetch Dog!</button>
+            		<div>
+                		<img id="dog-image" src="" alt="Random Dog" style="max-width: 100%; height: auto; border-radius: 10px; display: none;">
+            		</div>
+        		</div>
+    		</div>
+			</section>
+				
 				<!--Show/Hide Email -->
 				<div id="email" onclick="showhideEmail()">Show my email</div>
 				<script src="email.js"></script>
@@ -317,6 +334,7 @@
    	 	});
 	});
 	</script>
+	<--! Joke API and Dog API-->	
 	<script>
 		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",
 				function(result) {
@@ -325,6 +343,20 @@
 				}
 
 			);
+
+		 function fetchDogImage() {
+        	fetch("https://dog.ceo/api/breeds/image/random")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                let dogImage = document.getElementById("dog-image");
+                dogImage.src = data.message;
+                dogImage.style.display = "block";
+            })
+            .catch(function(error) {
+                console.log("Error fetching dog image:", error);
+            });
 	</script>
 		
         <!-- Bootstrap core JS-->
