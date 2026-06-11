@@ -207,7 +207,10 @@
                         <a class="small" href="#!">Contact</a>
                     </div>
                 </div>
+                <!--Digital Clock -->
+                <div id="digit-clock" class="text-center small mb-2"></div>
 
+                
                 <!-- Flag Page Tracker -->
                 <div class = "text-center mt-3">
                     <a href="https://info.flagcounter.com/8pzf">
@@ -216,6 +219,16 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Digital Clock Script -->
+    <script>
+        function displayTime() {
+            document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+        }
+    displayTime();
+        
+    setInterval(displayTime, 500);
+</script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
