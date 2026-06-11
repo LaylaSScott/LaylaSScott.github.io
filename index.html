@@ -188,6 +188,8 @@
                                     <a class="text-gradient" href="www.linkedin.com/in/laylasscott"><i class="bi bi-linkedin"></i></a>
                                     <a class="text-gradient" href="https://github.com/LaylaSScott"><i class="bi bi-github"></i></a>
                                 </div>
+								<!-- Cookie Welcome Message -->
+								<div id="welcome-message" class="text-center fw-bold text-primary mb-3"></div>
                             </div>
                         </div>
                     </div>
@@ -207,15 +209,18 @@
                         <a class="small" href="#!">Contact</a>
                     </div>
                 </div>
+				
                 <!--Digital Clock -->
-                <div id="digit-clock" class="text-center small mb-2"></div>
-
-                <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
-                <script src="https://waph-phung.github.io/clock.js"></script>
+                	<div id="digit-clock" class="text-center small mb-2"></div>
+				
+				<!-- Analog Clcok -->
+                	<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+                	<script src="https://waph-phung.github.io/clock.js"></script>
+				
                 <!-- Flag Page Tracker -->
                 <div class = "text-center mt-3">
                     <a href="https://info.flagcounter.com/8pzf">
-                        <img src="https://s01.flagcounter.com/count/8pzf/bg_FF59BD/txt_FFEDF3/border_000000/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_1/" alt="Flag Counter" border="0">
+                    <img src="https://s01.flagcounter.com/count/8pzf/bg_FF59BD/txt_FFEDF3/border_000000/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_1/" alt="Flag Counter" border="0">
                     </a>
                 </div>
             </div>
@@ -242,6 +247,50 @@
 		drawTime(ctx, radius);
 	}    
     </script>
+
+	<!-- Cookie Welcome Script -->
+	<script>
+    function getCookie(cookieName) {
+        let name = cookieName + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let cookieArray = decodedCookie.split(';');
+
+        for (let i = 0; i < cookieArray.length; i++) {
+            let cookie = cookieArray[i].trim();
+
+            if (cookie.indexOf(name) === 0) {
+                return cookie.substring(name.length, cookie.length);
+            }
+        }
+
+        return "";
+    }
+
+    function setCookie(cookieName, cookieValue, daysToExpire) {
+        let date = new Date();
+        date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + date.toUTCString();
+
+        document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + ";" + expires + ";path=/";
+    }
+
+    function displayWelcomeMessage() {
+        let lastVisit = getCookie("lastVisit");
+        let messageElement = document.getElementById("welcome-message");
+        let currentVisit = new Date();
+
+        if (lastVisit === "") {
+            messageElement.innerHTML = "Welcome to my homepage!";
+        } else {
+            messageElement.innerHTML = "Welcome back! Your last visit was " + lastVisit;
+        }
+
+        setCookie("lastVisit", currentVisit, 365);
+    }
+
+    displayWelcomeMessage();
+	</script>
+		
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
