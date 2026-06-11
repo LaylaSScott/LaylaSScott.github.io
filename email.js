@@ -5,8 +5,8 @@ function showhideEmail(){
     shown = false;
   }
   else{
-    var myemail = "<a href='mailto:phung-waph"+ "@" +
-    "outlook.com'>phung-waph" + "@" + "outlook.com</a>";
+    var myemail = "<a href='mailto:scott2ls"+ "@" +
+    "mail.uc.edu'>scott2ls" + "@" + "mail.uc.edu</a>";
     document.getElementById('email').innerHTML= myemail;
     shown = true;
   }
