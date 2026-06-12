@@ -217,7 +217,11 @@
         			<a class="btn btn-outline-primary" href="waph.html">
             			Web Applications and Programming Page
         			</a>
-    			</div>
+
+					 <!-- Cookie Welcome Message -->
+        			<div id="welcome-message" class="alert alert-primary mt-3 mx-auto" style="max-width: 700px;">
+            			Loading welcome message...
+    				</div>
 			</section>
 			
 			<!-- Interactive API Features Section -->
@@ -228,7 +232,7 @@
               	 		<span class="text-gradient d-inline">Interactive API Features</span>
             		</h2>
             		<p class="lead fw-light mb-4">
-                		These features use JavaScript to load live content from public APIs.
+                		These features use JavaScript to load live content from public APIs. The content below is produced by a thid party service and displayed through a Public API.
             		</p>
        			</div>
 
@@ -385,18 +389,24 @@
     }
 
     function displayWelcomeMessage() {
-        let lastVisit = getCookie("lastVisit");
-        let messageElement = document.getElementById("welcome-message");
-        let currentVisit = new Date();
+    	let messageElement = document.getElementById("welcome-message");
 
-        if (lastVisit === "") {
-            messageElement.innerHTML = "Welcome to my homepage!";
-        } else {
-            messageElement.innerHTML = "Welcome back! Your last visit was " + lastVisit;
-        }
+    	if (!messageElement) {
+        	console.log("welcome-message div was not found.");
+        return;
+		}
 
-        setCookie("lastVisit", currentVisit, 365);
-    }
+    	let lastVisit = getCookie("lastVisit");
+    	let currentVisit = new Date();
+
+    	if (lastVisit === "") {
+        	messageElement.innerHTML = "Welcome to my homepage!";
+    	} else {
+        	messageElement.innerHTML = "Welcome back! Your last visit was " + lastVisit;
+    	}
+
+    	setCookie("lastVisit", currentVisit, 365);
+	}
 
     displayWelcomeMessage();
 	</script>
