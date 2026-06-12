@@ -175,29 +175,37 @@
                     </div>
                 </div>
             </header>
-            <!-- About Section-->
-            <section class="bg-light py-5">
-                <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-xxl-8">
-                            <div class="text-center my-5">
-                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                                <p class="lead fw-light mb-4">Cybersecurity Engineering Major at the University of Cincinnati</p>
-                                <p class="text-muted">As an aspiring cybersecurity engineer with a strong foundation in software development, I am passionate about utilizing technology to solve the newest problems and enhance digital security. I’m currently pursuing a Bachelor of Science in Cybersecurity Engineering at the University of Cincinnati, and I have cultivated experience in programming languages such as C++/C, Python, and LabVIEW and grown through experience in testing, debugging, and software development. My experiences, both in academic and professional settings, have fueled my desire to contribute to the evolving landscape of cybersecurity.</p>
-                                <div class="d-flex justify-content-center fs-2 gap-4">
-                                    <a class="text-gradient" href="www.linkedin.com/in/laylasscott"><i class="bi bi-linkedin"></i></a>
-                                    <a class="text-gradient" href="https://github.com/LaylaSScott"><i class="bi bi-github"></i></a>
-                                </div>
-								<!-- Cookie Welcome Message -->
-								<div id="welcome-message" class="text-center fw-bold text-primary mb-3"></div>
-								<!-- Joke/Dog Disclaimer -->
-								<p class="lead fw-light mb-4">Any Dog photos or Jokes shown below are loaded form a Public API and are not my property nor created by me.</p>
+            <!-- About Section + Bootstrap Collapse Feature-->
+           	
+			<section class="py-5 bg-light">
+    			<div class="container px-5 text-center">
+        			<h2 class="display-6 fw-bolder">
+            			<span class="text-gradient d-inline">More About Me</span>
+        			</h2>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        			<p class="text-muted">
+           	 			Click the button below to reveal an extra section using Bootstrap JavaScript.
+        			</p>
+
+        			<button 
+            			class="btn btn-primary mb-3" 
+            			type="button" 
+            			data-bs-toggle="collapse" 
+            			data-bs-target="#funFacts" 
+            			aria-expanded="false" 
+            			aria-controls="funFacts">
+            				Show Fun Facts
+        			</button>
+
+        			<div class="collapse" id="funFacts">
+            			<div class="card card-body shadow border-0 mx-auto" style="max-width: 600px;">
+                			<p class="mb-2"><strong>Major:</strong> Cybersecurity Engineering</p>
+                			<p class="mb-2"><strong>Interests:</strong> Web development, cybersecurity, and software engineering</p>
+                			<p class="mb-0"><strong>Goal:</strong> To build secure and user-friendly technology solutions.</p>
+            			</div>
+        			</div>
+   				 </div>
+			</section>
 			<!-- Interactive API Features Section -->
 			<section class="py-5">
   			  <div class="container px-5">
