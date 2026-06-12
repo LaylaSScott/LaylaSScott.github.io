@@ -198,6 +198,68 @@
                     </div>
                 </div>
             </section>
+			<!-- Interactive API Features Section -->
+			<section class="py-5">
+  			  <div class="container px-5">
+        		<div class="text-center mb-5">
+            		<h2 class="display-5 fw-bolder">
+              	 		<span class="text-gradient d-inline">Interactive API Features</span>
+            		</h2>
+            		<p class="lead fw-light mb-4">
+                		These features use JavaScript to load live content from public APIs.
+            		</p>
+       			</div>
+
+        		<div class="row gx-5 justify-content-center">
+            		<!-- Dog API Card -->
+            		<div class="col-lg-5 mb-4">
+                		<div class="card shadow border-0 h-100">
+                    		<div class="card-body text-center p-4">
+                        		<h3 class="fw-bolder">Random Dog Image</h3>
+                        		<p class="text-muted">
+                          			Click the button to fetch a random dog image using the Dog API.
+                        		</p>
+
+                        		<button class="btn btn-primary mb-3" onclick="fetchDogImage()">
+                          	  		Fetch Dog!
+                        		</button>
+
+                        		<div id="dog-status" class="small text-muted mb-3"></div>
+
+                       				<img 
+                           	 			id="dog-image" 
+                            			src="" 
+                            			alt="Random Dog" 
+                            			class="img-fluid rounded shadow-sm" 
+                            			style="display: none; max-height: 350px;"
+                        			>
+                    			</div>
+                			</div>
+            			</div>
+
+            			<!-- Joke API Card -->
+            			<div class="col-lg-5 mb-4">
+                			<div class="card shadow border-0 h-100">
+                    			<div class="card-body text-center p-4">
+                       				<h3 class="fw-bolder">Programming Joke of the Day</h3>
+                        			<p class="text-muted">
+                            			This joke loads automatically from JokeAPI.
+                        			</p>
+
+                        		<div id="joke-result" class="border rounded p-3 bg-light mb-3">
+                           	 		Loading joke...
+                       	 		</div>
+
+                        		<button class="btn btn-outline-primary" onclick="fetchProgrammingJoke()">
+                            		New Joke
+                        		</button>
+                    		</div>
+                		</div>
+           	 		</div>
+        		</div>
+   	 		</div>
+		</section>
+
         </main>
         <!-- Footer-->
         <footer class="bg-white py-4 mt-auto">
@@ -213,49 +275,52 @@
                     </div>
                 </div>
 
-				<!-- Dog API Section -->
-			<section class="py-5">
-   			<div class="container px-5">
-        		<div class="text-center">
-            		<h2 class="display-6 fw-bolder">
-                		<span class="text-gradient d-inline">Random Dog Image</span>
-           			</h2>
-            		<p class="text-muted">Click the button to see a random dog image using the Dog API.</p>
-            		<button class="btn btn-primary mb-4" onclick="fetchDogImage()">Fetch Dog!</button>
-            		<div>
-                		<img id="dog-image" src="" alt="Random Dog" style="max-width: 100%; height: auto; border-radius: 10px; display: none;">
-            		</div>
-        		</div>
-    		</div>
-			</section>
-				
-				<!--Show/Hide Email -->
-				<div id="email" onclick="showhideEmail()">Show my email</div>
-				<script src="email.js"></script>
-				
-                <!--Digital Clock -->
-                	<div id="digit-clock" class="text-center small mb-2"></div>
-				
-				<!-- Analog Clcok -->
-                	<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
-                	<script src="https://waph-phung.github.io/clock.js"></script>
+				<div class="row text-center mt-4">
+    				<!-- Email Card -->
+    				<div class="col-md-4 mb-4">
+        				<h5 class="fw-bolder">Contact</h5>
+        				<div id="email" onclick="showhideEmail()" style="cursor: pointer;">
+            				Click to show my email!
+        				</div>
+        				<script src="email.js"></script>
+    				</div>
 
-                <!-- Flag Page Tracker -->
-                <div class = "text-center mt-3">
-                    <a href="https://info.flagcounter.com/8pzf">
-                    <img src="https://s01.flagcounter.com/count/8pzf/bg_FF59BD/txt_FFEDF3/border_000000/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_1/" alt="Flag Counter" border="0">
-                    </a>
-                </div>
+    			<!-- Clock Card -->
+    			<div class="col-md-4 mb-4">
+        			<h5 class="fw-bolder">Current Time</h5>
+        			<div id="digit-clock" class="small mb-3"></div>
+
+       	 			<canvas 
+            			id="analog-clock" 
+            			width="150" 
+            			height="150" 
+            			style="background-color:#999">
+        			</canvas>
+
+       	 			<script src="https://waph-phung.github.io/clock.js"></script>
+    			</div>
+
+    			<!-- Flag Counter Card -->
+    			<div class="col-md-4 mb-4">
+        			<h5 class="fw-bolder">Visitors</h5>
+        			<a href="https://info.flagcounter.com/8pzf">
+            			<img 
+                			src="https://s01.flagcounter.com/count/8pzf/bg_FF59BD/txt_FFEDF3/border_000000/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_1/" 
+             			    alt="Flag Counter" 
+                			border="0">
+        			</a>
+   				 	</div>
+				</div>
             </div>
         </footer>
 
         <!-- Digital Clock Script -->
-    <script>
-        function displayTime() {
-            document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
-        }
-    displayTime();  
-    setInterval(displayTime, 500);
+    	<script>
+        	function displayTime() {
+            	document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+        	}
+    		displayTime();  
+    		setInterval(displayTime, 500);
 
     var canvas = document.getElementById("analog-clock");
 	var ctx = canvas.getContext("2d");
@@ -315,30 +380,55 @@
 	</script>
 
 
-	<!-- Joke API and Dog API -->	
+	<!-- Joke API and Dog API Script -->
 	<script>
-		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-				function(result) {
-					$("#response" ).html( "A programming joke of the day: " + result.joke);
-					console.log("From jokeAPI: " + JSON.stringify(result));			
-				}
+    	function fetchProgrammingJoke() {
+        const jokeResult = document.getElementById("joke-result");
 
-			);
+        jokeResult.innerHTML = "Loading joke...";
 
-		 function fetchDogImage() {
-        	fetch("https://dog.ceo/api/breeds/image/random")
+        fetch("https://v2.jokeapi.dev/joke/Programming?type=single")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(result) {
+                if (result && result.joke) {
+                    jokeResult.innerHTML = "A programming joke of the day: " + result.joke;
+                } else {
+                    jokeResult.innerHTML = "No joke was returned. Try again.";
+                }
+
+                console.log("From JokeAPI: " + JSON.stringify(result));
+            })
+            .catch(function(error) {
+                jokeResult.innerHTML = "Error loading joke.";
+                console.log("Error fetching joke:", error);
+            });
+    }
+
+    function fetchDogImage() {
+        const dogImage = document.getElementById("dog-image");
+        const dogStatus = document.getElementById("dog-status");
+
+        dogStatus.innerHTML = "Loading dog image...";
+
+        fetch("https://dog.ceo/api/breeds/image/random")
             .then(function(response) {
                 return response.json();
             })
             .then(function(data) {
-                let dogImage = document.getElementById("dog-image");
                 dogImage.src = data.message;
                 dogImage.style.display = "block";
+                dogStatus.innerHTML = "Dog image loaded!";
             })
             .catch(function(error) {
+                dogStatus.innerHTML = "Error loading dog image.";
                 console.log("Error fetching dog image:", error);
             });
-	</script>
+    }
+
+    fetchProgrammingJoke();
+</script>
 		
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
