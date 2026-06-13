@@ -417,7 +417,7 @@
     	 function fetchProgrammingJoke() {
         const jokeResult = document.getElementById("joke-result");
 
-        jokeResult.innerHTML = "Loading joke...";
+        jokeResult.innerHTML = "Loading new joke...";
 
         fetch("https://v2.jokeapi.dev/joke/Programming?type=single")
             .then(function(response) {
@@ -425,9 +425,9 @@
             })
             .then(function(result) {
                 if (result && result.joke) {
-                    jokeResult.innerHTML = "A programming joke of the day: " + result.joke;
+                    jokeResult.innerHTML = "Programming joke of the minute: " + result.joke;
                 } else {
-                    jokeResult.innerHTML = "No joke was returned. Try again.";
+                    jokeResult.innerHTML = "No joke was returned. Trying again soon.";
                 }
 
                 console.log("From JokeAPI: " + JSON.stringify(result));
@@ -437,6 +437,12 @@
                 console.log("Error fetching joke:", error);
             });
     }
+
+    // Load one joke immediately when the page opens
+    fetchProgrammingJoke();
+
+    // Load a new joke every 60 seconds
+    setInterval(fetchProgrammingJoke, 60000);
     function fetchDogImage() {
         const dogImage = document.getElementById("dog-image");
         const dogStatus = document.getElementById("dog-status");
@@ -457,8 +463,6 @@
                 console.log("Error fetching dog image:", error);
             });
     }
-
-    fetchProgrammingJoke();
 </script>
 		
         <!-- Bootstrap core JS-->
