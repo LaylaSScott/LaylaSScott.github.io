@@ -414,7 +414,7 @@
 
 	<!-- Joke API and Dog API Script -->
 	<script>
-    	function fetchProgrammingJoke() {
+    	 function fetchProgrammingJoke() {
         const jokeResult = document.getElementById("joke-result");
 
         jokeResult.innerHTML = "Loading joke...";
@@ -437,7 +437,6 @@
                 console.log("Error fetching joke:", error);
             });
     }
-
     function fetchDogImage() {
         const dogImage = document.getElementById("dog-image");
         const dogStatus = document.getElementById("dog-status");
